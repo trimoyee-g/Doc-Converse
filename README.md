@@ -10,9 +10,9 @@ Features:
 - Handwritten Text Recognition: Allows users to upload images of handwritten notes. Employs OCR (Optical Character Recognition) technology through Tesseract to convert handwritten content into editable text, bridging the gap between analog and digital formats.
 
 Technologies Used:
-Streamlit: Provides the web interface and user interaction capabilities.
-OpenAI: Powers AI-driven chat functionalities.
-PyPDF2: Extracts text from PDF documents.
-Pandas: Handles data processing and interaction with CSV files.
-Matplotlib: Offers potential visualization of data insights.
-Pytesseract: Integrates Optical Character Recognition for handwritten text recognition.
+- Streamlit: Provides the web interface and user interaction capabilities.
+- OpenAI: Powers AI-driven chat functionalities.
+- PyPDF2: Extracts text from PDF documents.
+- Pandas: Handles data processing and interaction with CSV files.
+- Matplotlib: Offers potential visualization of data insights.
+- Pytesseract: Integrates Optical Character Recognition for handwritten text recognition.
