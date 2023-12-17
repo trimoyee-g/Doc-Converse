@@ -10,7 +10,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from htmlTemplates import css, bot_template, user_template
-import pytesseract
+# import pytesseract
 from PIL import Image
 import pandas as pd
 from pandasai.llm.openai import OpenAI
@@ -154,33 +154,33 @@ def csv_page():
 # Path to Tesseract executable (change this based on your installation path)
 # pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-def handwritten_to_text():
-    st.header("Convert Handwritten Note to Text File")
-    st.write("Unlock the power of handwritten communication. Seamlessly convert handwritten notes into editable text, fostering a bridge between analog and digital worlds through AI-driven Handwritten Text Recognition!")
+# def handwritten_to_text():
+#     st.header("Convert Handwritten Note to Text File")
+#     st.write("Unlock the power of handwritten communication. Seamlessly convert handwritten notes into editable text, fostering a bridge between analog and digital worlds through AI-driven Handwritten Text Recognition!")
 
-    with st.sidebar:
-        if st.button("<"):
-            st.session_state.page = "Landing Page"
+#     with st.sidebar:
+#         if st.button("<"):
+#             st.session_state.page = "Landing Page"
 
-        uploaded_file = st.file_uploader("Upload a handwritten image", type=["jpg", "jpeg", "png"])
+#         uploaded_file = st.file_uploader("Upload a handwritten image", type=["jpg", "jpeg", "png"])
 
 
-    if uploaded_file is not None:
-        image = Image.open(uploaded_file)
-        st.image(image, caption='Uploaded Image', use_column_width=True)
+#     if uploaded_file is not None:
+#         image = Image.open(uploaded_file)
+#         st.image(image, caption='Uploaded Image', use_column_width=True)
 
-        if st.button('Recognize Text'):
-            text = perform_ocr(image)
-            st.write('**Extracted Text:**')
-            st.write(text)
+#         if st.button('Recognize Text'):
+#             text = perform_ocr(image)
+#             st.write('**Extracted Text:**')
+#             st.write(text)
 
-def perform_ocr(image):
-    try:
-        text = pytesseract.image_to_string(image)
-        return text
-    except Exception as e:
-        st.error(f"An error occurred during text recognition: {e}")
-        return None
+# def perform_ocr(image):
+#     try:
+#         text = pytesseract.image_to_string(image)
+#         return text
+#     except Exception as e:
+#         st.error(f"An error occurred during text recognition: {e}")
+#         return None
 
 
 
@@ -196,8 +196,8 @@ def landing_page():
         st.session_state.page = "PDF Page"
     elif st.button("Chat with multiple CSV"):
         st.session_state.page = "CSV Page"
-    elif st.button("Convert Handwritten Note to Text File"):
-        st.session_state.page = "HANDWRITTEN Page"
+    # elif st.button("Convert Handwritten Note to Text File"):
+    #     st.session_state.page = "HANDWRITTEN Page"
 def main():
     load_dotenv()
     
@@ -212,8 +212,8 @@ def main():
         landing_page()
     elif st.session_state.page == "PDF Page":
         pdf_page()
-    elif st.session_state.page == "HANDWRITTEN Page":
-        handwritten_to_text()
+    # elif st.session_state.page == "HANDWRITTEN Page":
+    #     handwritten_to_text()
     elif st.session_state.page == "CSV Page":
         csv_page()
 
