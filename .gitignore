@@ -1,6 +1,7 @@
 .env
 pandasai.log
 venv/
+myenv/
 __pycache__/
 cache/
 exports/
